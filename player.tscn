@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://c67oasneyp443"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_1fd5f"]
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="2_5nv34"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tkara"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_22reo"]
+
+[node name="player" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_1fd5f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_tkara")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_22reo")
+
+[node name="ui" type="CanvasLayer" parent="CharacterBody3D"]
+script = ExtResource("2_5nv34")
+
+[node name="fps_Label" type="Label" parent="CharacterBody3D/ui"]
+offset_right = 291.0
+offset_bottom = 26.0
+text = "ffffffffffffffffffffffffffffffffffffffffffffffffff"
+
+[node name="time_Label" type="Label" parent="CharacterBody3D/ui"]
+offset_top = 26.0
+offset_right = 294.0
+offset_bottom = 52.0
+text = "ffffffffffffffffffffffffffffffffffffffffffffffffff"
+
+[node name="kills_Label" type="Label" parent="CharacterBody3D/ui"]
+offset_top = 52.0
+offset_right = 291.0
+offset_bottom = 78.0
+text = "ffffffffffffffffffffffffffffffffffffffffffffffffff"
+
+[node name="health_bar" type="ProgressBar" parent="CharacterBody3D/ui"]
+offset_top = 78.0
+offset_right = 291.0
+offset_bottom = 105.0
+
+[node name="Head" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.641704, -0.411795)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0968628)
+
+[node name="Timer" type="Timer" parent="CharacterBody3D"]
+autostart = true
+
+[connection signal="timeout" from="CharacterBody3D/Timer" to="CharacterBody3D" method="_on_timer_timeout"]

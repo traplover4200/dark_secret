@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bby74beyr83ts"]
+
+[ext_resource type="Script" path="res://Scripts/died.gd" id="1_vsvjf"]
+
+[node name="died" type="Node2D"]
+script = ExtResource("1_vsvjf")
+
+[node name="you_died_Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 288.0
+offset_right = 1144.0
+offset_bottom = 314.0
+size_flags_horizontal = 4
+text = "you died"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="kills_Label" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 336.0
+offset_right = 728.0
+offset_bottom = 359.0
+text = "11111111111111111111111111111111"
+
+[node name="time_Label" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 362.0
+offset_right = 725.0
+offset_bottom = 388.0
+text = "11111111111111111111111111111111"
