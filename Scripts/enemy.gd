@@ -2,7 +2,9 @@ extends CharacterBody3D
 
 
 var player = null
-var state_machine
+var damage = 1
+
+
 
 const SPEED = 4.0
 const ATTACK_RANGE = 2.0
@@ -10,7 +12,7 @@ const ATTACK_RANGE = 2.0
 @export var player_path : NodePath
 
 @onready var nav_agent = $NavigationAgent3D
-
+@onready var ray = $RayCast3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +21,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if ray.is_colliding():
+		var target = ray.get_collider()
+		if target.is_in_group("player"):
+			print("player is hit")
+			target.health -= damage
+
+
+
 	velocity = Vector3.ZERO
 	nav_agent.set_target_position(player.global_transform.origin)
 	var next_nav_point = nav_agent.get_next_path_position()

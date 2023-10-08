@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bix0fv0l55lr"]
+[gd_scene load_steps=9 format=3 uid="uid://bix0fv0l55lr"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_wx67d"]
 [ext_resource type="PackedScene" uid="uid://5iurrb07epis" path="res://player.tscn" id="3_81ykv"]
 [ext_resource type="PackedScene" uid="uid://b8b0knfuxndyp" path="res://enemy.tscn" id="3_722l0"]
+[ext_resource type="PackedScene" uid="uid://dnf3mtuwlpryl" path="res://health.tscn" id="4_om6dt"]
 
 [sub_resource type="Environment" id="Environment_mja3h"]
 
@@ -44,3 +45,6 @@ material = SubResource("StandardMaterial3D_vjp2y")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6759, 1.18841, 0.490724)
 use_collision = true
 material = SubResource("StandardMaterial3D_kqjvc")
+
+[node name="health" parent="." instance=ExtResource("4_om6dt")]
+transform = Transform3D(0.398799, 0, 0, 0, 0.361312, 0, 0, 0, 0.765988, -8.68728, 1.02405, 4.77612)

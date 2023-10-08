@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://5iurrb07epis"]
+[gd_scene load_steps=5 format=3 uid="uid://5iurrb07epis"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_yuoc2"]
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="2_esp61"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sbgyl"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 floor_max_angle = 1.0472
 script = ExtResource("1_yuoc2")
@@ -19,6 +20,31 @@ mesh = SubResource("CapsuleMesh_xc2g5")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_sbgyl")
+
+[node name="ui" type="CanvasLayer" parent="."]
+script = ExtResource("2_esp61")
+
+[node name="health_bar" type="ProgressBar" parent="ui"]
+offset_top = 80.0
+offset_right = 192.0
+offset_bottom = 107.0
+
+[node name="fps_Label" type="Label" parent="ui"]
+offset_right = 192.0
+offset_bottom = 23.0
+text = "fffffffffffffffffffffffffffffffff"
+
+[node name="time_Label" type="Label" parent="ui"]
+offset_top = 26.0
+offset_right = 192.0
+offset_bottom = 49.0
+text = "fffffffffffffffffffffffffffffffff"
+
+[node name="kills_Label" type="Label" parent="ui"]
+offset_top = 52.0
+offset_right = 192.0
+offset_bottom = 75.0
+text = "fffffffffffffffffffffffffffffffff"
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
