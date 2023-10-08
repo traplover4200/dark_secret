@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bix0fv0l55lr"]
+[gd_scene load_steps=7 format=3 uid="uid://bix0fv0l55lr"]
 
 [ext_resource type="PackedScene" uid="uid://c67oasneyp443" path="res://player.tscn" id="1_1pwwl"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_wx67d"]
-[ext_resource type="PackedScene" uid="uid://bn54rejbaj014" path="res://enemys.tscn" id="3_u1p7j"]
 
 [sub_resource type="Environment" id="Environment_mja3h"]
 
@@ -29,9 +28,6 @@ environment = SubResource("Environment_mja3h")
 
 [node name="player" parent="." instance=ExtResource("1_1pwwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23252, 1.33253, 8.6845)
-
-[node name="enemy" parent="." instance=ExtResource("3_u1p7j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88298, -17.0203)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_l5kte")
