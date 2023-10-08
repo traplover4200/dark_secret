@@ -1,9 +1,9 @@
 extends Node3D
 
-@onready var player = get_node("player")
+# @onready var player = get_node("player")
 
 func _physics_process(delta):
-	get_tree().call_group("enemy","update_target_location",player.global_position)
+	pass
 
 
 
@@ -15,4 +15,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(player.global_transform.origin)
+	pass
+	# print(player.global_transform.origin)
